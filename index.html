@@ -162,11 +162,11 @@ function draw() {
   const label = (p, x, y, w, h, c) => {
     if (w < 46 || h < 18) return;
     ctx.fillStyle = lum(c) > 140 ? '#101216' : '#f2f4f7';
-    ctx.font = '12px 'Segoe UI', sans-serif';
+    ctx.font = '12px "Segoe UI", sans-serif';
     ctx.textBaseline = 'top';
     ctx.save(); ctx.beginPath(); ctx.rect(x, y, w, h); ctx.clip();
     ctx.fillText(p.name, x+5, y+4);
-    if (h > 34) { ctx.globalAlpha = .75; ctx.font = '11px 'Segoe UI', sans-serif';
+    if (h > 34) { ctx.globalAlpha = .75; ctx.font = '11px "Segoe UI", sans-serif';
       ctx.fillText(METRICS[sk].fmt(p[sk]), x+5, y+19); }
     ctx.restore();
   };
@@ -184,7 +184,7 @@ function draw() {
     ctx.strokeStyle = '#000'; ctx.lineWidth = 1.5; ctx.strokeRect(n.x+.5, n.y+.5, n.w-1, n.h-1);
     const hdr = n.h > 40 && n.w > 60 ? 18 : 0, pad = 2;
     if (hdr) {
-      ctx.fillStyle = '#c9d0da'; ctx.font = 'bold 11px 'Segoe UI', sans-serif'; ctx.textBaseline = 'top';
+      ctx.fillStyle = '#c9d0da'; ctx.font = 'bold 11px "Segoe UI", sans-serif'; ctx.textBaseline = 'top';
       ctx.save(); ctx.beginPath(); ctx.rect(n.x, n.y, n.w, hdr); ctx.clip();
       ctx.fillText(`${n.name} · ${METRICS[sk].fmt(n.value)} · ${n.children.length}`, n.x+5, n.y+4);
       ctx.restore();
